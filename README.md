@@ -5,10 +5,6 @@ This guide will walk you through setting up the **Gswarm monitoring bot**, conne
 
 Gswarm allows you to monitor your Gensyn swarm node’s activity directly from your phone using Telegram.
 
----
-
-## 📘 Official Reference
-🔗 **Docs:** [Deep-Commit / Gswarm](https://github.com/Deep-Commit/gswarm)
 
 ---
 
@@ -55,6 +51,9 @@ This process takes just a few minutes.
 3. Follow the steps to name your bot and choose a username  
 4. Copy the **bot token** provided — you’ll use it soon
 
+<img width="575" height="455" alt="Screenshot 2025-10-31 at 8 38 24 AM" src="https://github.com/user-attachments/assets/67604f7d-ed06-45d5-875d-b7c3524f8b40" />
+
+
 ### 🆔 2. Find Your Chat ID
 1. Send any message to your new bot on Telegram  
 2. Open this link in your browser (replace `<YOUR_BOT_TOKEN>` with your token):
@@ -97,7 +96,7 @@ To earn *The Swarm* Discord role, you’ll need to link your Telegram and Discor
 
 ### 🧠 1. Get a Link Code
 1. Open the official **Gensyn Discord**  
-2. Go to the `#|swarm-link` channel  
+2. Go to the `#|link-for-access` channel  
 3. Type:
    ```
    /link-telegram
