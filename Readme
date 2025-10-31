@@ -1,0 +1,150 @@
+# 🤖 Gswarm Role & Telegram Bot Setup
+
+Welcome!  
+This guide will walk you through setting up the **Gswarm monitoring bot**, connecting it with **Telegram**, and linking it to **Discord** so you can earn **The Swarm role**.
+
+Gswarm lets you keep an eye on your Gensyn swarm node’s activity directly from your phone through Telegram.
+
+---
+
+## 📘 Official Reference
+🔗 **Docs:** [Deep-Commit / Gswarm](https://github.com/Deep-Commit/gswarm)
+
+---
+
+## ⚙️ Step 1 — Install Gswarm
+
+Before anything else, make sure you have **Go (Golang)** installed and updated.
+
+### 🧩 1. Install Go
+Run the following commands to install Go 1.22.4:
+
+```bash
+sudo rm -rf /usr/local/go
+curl -L https://go.dev/dl/go1.22.4.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile
+echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> $HOME/.bash_profile
+source .bash_profile
+go version
+```
+
+### 🧱 2. Install Gswarm
+Once Go is installed, run this command to download and install the Gswarm tool:
+
+```bash
+go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+```
+
+If everything’s set up correctly, you’ll be able to run Gswarm from anywhere in your terminal.
+
+✅ **Check installation:**
+```bash
+gswarm --version
+```
+
+---
+
+## 💬 Step 2 — Create and Configure Your Telegram Bot
+
+You’ll need a Telegram bot that can talk to your Gswarm instance.  
+This only takes a couple of minutes.
+
+### 🪄 1. Create a New Bot
+1. Open Telegram and start a chat with **[@BotFather](https://t.me/BotFather)**  
+2. Type `/newbot`  
+3. Follow the prompts to name your bot and choose a username  
+4. When it’s done, copy the **bot token** that BotFather gives you — you’ll need it later
+
+
+### 🆔 2. Find Your Chat ID
+1. Open Telegram and send a message to your new bot (like “hello”)  
+2. In your browser, go to this link — replacing `<YOUR_BOT_TOKEN>` with the token from BotFather:
+   ```
+   https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+   ```
+3. You’ll see a JSON response. Look for a section that says:
+   ```json
+   "chat": { "id": 123456789 }
+   ```
+   That number is your **chat ID** — keep it safe.
+
+💡 *If you see no results (`"result":[]`), send another message to your bot and refresh the page.*
+
+---
+
+## ⚙️ Step 3 — Start the Gswarm Bot
+
+Now, it’s time to connect everything together.
+
+In your terminal, simply run:
+```bash
+gswarm
+```
+
+You’ll be asked for:
+- Your **Telegram bot token**  
+- Your **chat ID**  
+- Your **EOA address** (found in your [Gensyn Dashboard](https://dashboard.gensyn.ai))
+
+Once entered, Gswarm will begin monitoring your node and sending updates to your Telegram.
+
+---
+
+## 🔗 Step 4 — Connect Discord & Telegram
+
+To earn *The Swarm* role, you’ll link your Telegram bot with your Discord account.
+
+### 🧠 1. Request Your Link Code
+- Join the official **Gensyn Discord**  
+- Go to the channel `#|swarm-link`  
+- Type:
+  ```
+  /link-telegram
+  ```
+- Discord will reply with a unique code
+
+### 💬 2. Verify via Telegram
+- Go back to your Telegram bot  
+- Send the message:
+  ```
+  /verify <code>
+  ```
+  *(replace `<code>` with the one you got from Discord)*
+
+After verification, your Discord and Telegram accounts will be linked — and you’ll receive **The Swarm role** 🌀
+
+---
+
+## 🧩 Optional — Keep Gswarm Running 24/7
+
+If you want your bot to stay online even when you close your terminal, you can use **screen**:
+
+```bash
+screen -S gswarm
+gswarm
+```
+
+Detach the session anytime with:
+```
+Ctrl + A + D
+```
+
+To come back later:
+```bash
+screen -r gswarm
+```
+
+---
+
+## 🎉 You’re Done!
+
+You’ve successfully:
+- Installed **Gswarm**
+- Created your **Telegram bot**
+- Connected it to your **Gensyn node**
+- Linked your **Discord** account
+- Earned **The Swarm role**
+
+---
+
+**🚀 Monitor smarter. Stay connected. Join The Swarm. ⚡**
