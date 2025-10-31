@@ -55,7 +55,6 @@ This only takes a couple of minutes.
 3. Follow the prompts to name your bot and choose a username  
 4. When it’s done, copy the **bot token** that BotFather gives you — you’ll need it later
 
-
 ### 🆔 2. Find Your Chat ID
 1. Open Telegram and send a message to your new bot (like “hello”)  
 2. In your browser, go to this link — replacing `<YOUR_BOT_TOKEN>` with the token from BotFather:
